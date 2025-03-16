@@ -1,9 +1,9 @@
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.DragAndDropOptions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byTagAndText;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -25,13 +25,19 @@ public class HW5 {
     }
 
     @Test
-    void DragDropTest() {
+    void moveToElementTest() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
-        actions().moveToElement($("#column-a")).clickAndHold().moveToElement($("#column-b")).release().perform();
+        actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().perform();
         $("#column-a").shouldHave(text("B"));
         $("#column-b").shouldHave(text("A"));
-        sleep(5000);
-
 
     }
-}
+
+    @Test
+    void DragAndDropTest() {
+        open("https://the-internet.herokuapp.com/drag_and_drop");
+        $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
+        $("#column-a").shouldHave(text("B"));
+        $("#column-b").shouldHave(text("A"));
+
+    }}
