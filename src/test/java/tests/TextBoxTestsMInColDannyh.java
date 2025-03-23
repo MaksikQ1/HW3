@@ -10,6 +10,7 @@ public class TextBoxTestsMInColDannyh extends TestBase {
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
+                .removeBanners()
                 .setFirstName("Maks")
                 .setLastName("Familiya")
                 .setGender("Male")

@@ -1,14 +1,8 @@
 package tests;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 import pages.components.ResultTableComponent;
-
-import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
 
 public class TextBoxTestsHW6Test extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
@@ -16,6 +10,7 @@ public class TextBoxTestsHW6Test extends TestBase {
     @Test
     void successfulRegistrationTest() {
         registrationPage.openPage()
+                .removeBanners()
                 .setFirstName("Maks")
                 .setLastName("Familiya")
                 .setEmail("Maks@Familiya.com")
@@ -47,6 +42,7 @@ public class TextBoxTestsHW6Test extends TestBase {
     void negativeTest(){
 
         registrationPage.openPage()
+                .removeBanners()
                 .setFirstName("Alina")
                 .setLastName("Kovrigina")
                 .setEmail("alina885@mail")
