@@ -16,7 +16,7 @@ public class HW5 {
     }
 
     @Test
-    void GitEnterprisesTest() {
+    void gitEnterprisesTest() {
         open("https://github.com");
         $(".HeaderMenu-nav").find(byText("Solutions")).hover();
         $$(".HeaderMenu-dropdown-link").findBy(text("Enterprises")).click();
@@ -25,7 +25,7 @@ public class HW5 {
     }
 
     @Test
-    void moveToElementTest() {
+    void dragAndDropActionsTest() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         actions().clickAndHold($("#column-a")).moveToElement($("#column-b")).release().perform();
         $("#column-a").shouldHave(text("B"));
@@ -34,7 +34,7 @@ public class HW5 {
     }
 
     @Test
-    void DragAndDropTest() {
+    void dragAndDropMethodTest() {
         open("https://the-internet.herokuapp.com/drag_and_drop");
         $("#column-a").dragAndDrop(DragAndDropOptions.to($("#column-b")));
         $("#column-a").shouldHave(text("B"));
