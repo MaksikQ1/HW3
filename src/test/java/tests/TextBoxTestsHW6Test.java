@@ -43,10 +43,10 @@ public class TextBoxTestsHW6Test extends TestBase {
 
         registrationPage.openPage()
                 .removeBanners()
-                .setFirstName("Alina")
-                .setLastName("Kovrigina")
-                .setEmail("alina885@mail")
-                .setGender("Female")
+                .setFirstName("Maks")
+                .setLastName("Familiya")
+                .setEmail("Maks@Familiya")
+                .setGender("Male")
                 .setUserNumber("54321")
                 .submitForm();
 
